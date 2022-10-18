@@ -38,12 +38,14 @@ bool Menu::OpenIni() {
 }
 
 int Menu::OpenTxt(std::string & sFilename) {
+	std::cout << "\t Loading...\n";
+
 	std::fstream fFiletxt;
 	fFiletxt.open(sFilename, std::ios::in);
 	if (!fFiletxt.good())
 	{
 		this->sFilename = "Brak pliku";
-		std::cout << "\nNie mozna wczytac pliku...";
+		std::cout << "\n Nie mozna wczytac pliku...";
 		return 0;
 	}
 
@@ -56,29 +58,33 @@ int Menu::OpenTxt(std::string & sFilename) {
 		iVertices = NULL;
 		iNOfVertices = 0;
 	}
-
-	
+	std::cout << "\t TSP file opened...\n";
 
 	this->sFilename = sFilename;
 	fFiletxt >> iNOfVertices;
 	iVertices = new int *[iNOfVertices];
 	int iLine = 0;
 
+	std::cout << "Number of Vertices: " << iNOfVertices << std::endl;
+
 	for (int i = 0; i < iNOfVertices; ++i) {
 		iVertices[i] = new int[iNOfVertices];
 	}
 
 	while (!fFiletxt.eof()) {
-		for (int i = 0; i < iNOfVertices; ++i) {
+		for (int x = 0; x < iNOfVertices; ++x) {
 			for (int j = 0; j < iNOfVertices; ++j) {
-				fFiletxt >> iVertices[i][j];
+				fFiletxt >> iVertices[x][j];
 			}
 			iLine++;
 		}
 	}
-	fFiletxt.close();
 
-	if (iLine != iNOfVertices) {
+	std::cout << "\t Instance copied...\n";
+
+	fFiletxt.close();
+	
+	if (iLine != iNOfVertices && iLine != iNOfVertices*2) {
 		std::cout << "\nNiepoprawna ilosc danych...";
 		this->sFilename = "Brak pliku";
 		for (int i = 0; i < iNOfVertices; ++i) {
@@ -89,6 +95,7 @@ int Menu::OpenTxt(std::string & sFilename) {
 		iNOfVertices = 0;
 		return 1;
 	}
+
 	std::cout << "\nWczytanie pliku przebieglo poprawnie";
 	return 0;
 }

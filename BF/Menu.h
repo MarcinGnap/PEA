@@ -10,11 +10,10 @@ public:
 
 	int iNOfVertices;
 	int **iVertices;
+	int *bestPath;
 
 	Menu();
 	~Menu();
 	bool OpenIni();
 	int OpenTxt(std::string & sFilename);
-
 };
-
