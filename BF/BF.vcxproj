@@ -126,10 +126,12 @@
     <ClCompile Include="BruteForce.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="timeMeasurement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BruteForce.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="timeMeasurement.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

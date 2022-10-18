@@ -96,6 +96,6 @@ int Menu::OpenTxt(std::string & sFilename) {
 		return 1;
 	}
 
-	std::cout << "\nWczytanie pliku przebieglo poprawnie";
+	std::cout << "\n Wczytanie pliku przebieglo poprawnie\n";
 	return 0;
 }

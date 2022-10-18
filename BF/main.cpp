@@ -1,8 +1,15 @@
 #include "Menu.h"
+#include "BruteForce.h"
+#include "timeMeasurement.h"
 #include <iostream>
+#include <chrono>
+
+using namespace std;
 
 int main() {
 	Menu menu;
+	BruteForce BF;
+	timeMeasurement tM;
 
 	std::cout << "Starting...\n";
 
@@ -11,9 +18,17 @@ int main() {
 
 	menu.OpenTxt(menu.sFilename);
 
-	//while (menu.iNOfVertices != 0) {
-	//	std::cout << "pentla";
-	//}
+	std::cout << "\t Calculating...\n";
+
+	for (int n = 0; n < menu.iRNumber; ++n) {
+		auto o1 = chrono::high_resolution_clock::now();
+		
+		BF.calculate(menu.iVertices, menu.iNOfVertices);
+		
+		auto o2 = chrono::high_resolution_clock::now();
+		tM.tMOutcome(o1, o2);
+	}
+	std::cout << "\t Done...\n";
 
 	getchar();
 	return 0;
