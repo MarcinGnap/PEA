@@ -16,29 +16,33 @@ BruteForce::~BruteForce()
 
 int BruteForce::calculate(int ** iVertices, int iNOfVertices)
 {
-	int iLowestCost = INT_MAX;
 	int iTemp = 0;
 	std::vector<int> vTowns;
 
 	for (int i = 0; i < iNOfVertices; ++i) {
 		if (i < iNOfVertices) {
-			vTowns.push_back(i);				//	Tutaj mozna by post-inkrementacja
+			vTowns.push_back(i);
 		}
 	}
 
+	iLowestCost = INT_MAX;
 	do {
 		int iCurrentWeigh = 0;
 		int iTempVertex = iTemp;
 
-		for (int j = 0; j < vTowns.size(); j++) {
+		for (int j = 0; j < vTowns.size(); ++j) {
 			iCurrentWeigh += iVertices[iTempVertex][vTowns[j]];
 			iTempVertex = vTowns[j];
 		}
 		iCurrentWeigh += iVertices[iTempVertex][iTemp];
 
-		iLowestCost = std::min(iLowestCost, iCurrentWeigh);
+		if (iCurrentWeigh < iLowestCost)
+		{
+			iLowestCost = std::min(iLowestCost, iCurrentWeigh);
+		}
 	} while (next_permutation(vTowns.begin(), vTowns.end()));
 
+	vTowns.clear();
 	std::cout << "\n Min cost: " << iLowestCost << std::endl;
 
 	return 0;

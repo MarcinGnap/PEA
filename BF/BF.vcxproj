@@ -133,6 +133,20 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="timeMeasurement.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini" />
+    <None Include="results.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="tsp_10.txt" />
+    <Text Include="tsp_12.txt" />
+    <Text Include="tsp_13.txt" />
+    <Text Include="tsp_14.txt" />
+    <Text Include="tsp_15.txt" />
+    <Text Include="tsp_17.txt" />
+    <Text Include="tsp_6_1.txt" />
+    <Text Include="tsp_6_2.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

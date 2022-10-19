@@ -1,7 +1,10 @@
 #pragma once
+
 class BruteForce
 {
 public:
+	int iLowestCost;
+
 	BruteForce();
 	~BruteForce();
 

@@ -6,6 +6,8 @@ class Menu {
 public:
 	int iRNumber;
 	int iOCost;
+	int iOptimalRouteSize;
+	int *iOptimalRoute;
 	std::string sFilename;
 
 	int iNOfVertices;

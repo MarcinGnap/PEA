@@ -39,4 +39,38 @@
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini">
+      <Filter>Pliki zasobów</Filter>
+    </None>
+    <None Include="results.csv">
+      <Filter>Pliki zasobów</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="tsp_6_1.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="tsp_6_2.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="tsp_10.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="tsp_12.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="tsp_13.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="tsp_14.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="tsp_15.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="tsp_17.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

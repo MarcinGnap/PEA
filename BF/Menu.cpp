@@ -22,6 +22,17 @@ bool Menu::OpenIni() {
 	std::ifstream ifFileini("config.ini", std::ios::in);
 	if (ifFileini.good())
 	{
+		ifFileini >> sFilename;
+		ifFileini >> iRNumber;
+		ifFileini >> iOCost;
+		ifFileini >> iOptimalRouteSize;
+
+		iOptimalRoute = new int[iOptimalRouteSize];
+		for (int i = 0; i < iOptimalRouteSize; i++)
+		{
+			ifFileini >> iOptimalRoute[i];
+		}
+		/*
 		std::string sTemp;
 		std::getline(ifFileini, sFilename);
 		std::getline(ifFileini, sTemp);
@@ -29,7 +40,7 @@ bool Menu::OpenIni() {
 		sTemp = " ";
 		std::getline(ifFileini, sTemp);
 		iOCost = std::stoi(sTemp);
-
+		*/
 		ifFileini.close();
 
 		return true;
